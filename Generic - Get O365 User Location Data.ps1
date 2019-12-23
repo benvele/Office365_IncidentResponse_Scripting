@@ -1,4 +1,12 @@
-﻿function Merge-CSVFiles { 
+#When I originally created this script, 365 was limiting the amount of events pulled at a time to 2000 events. 
+#I circumvented this by having it pull 9 requests, with a 10 day period for each request. The events that are pulled
+#go back 90 days. At the beginning you will be asked for credentials twice, this is normal.
+
+#NOTE: This will NOT work if the admin account has MFA enabled. My workaround for the time being is to have an admin account
+#that I enable only when this script is needed.
+
+
+function Merge-CSVFiles { 
 [cmdletbinding()] 
 param( 
     [string[]]$CSVFiles, 
